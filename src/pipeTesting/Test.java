@@ -1,7 +1,7 @@
-package Testing;
+package pipeTesting;
 
-import Core.Artifact;
-import Core.Artifact_ID;
+import core.Artifact;
+import core.Artifact_ID;
 
 /**
  * Created by nwilson on 2/19/15.
