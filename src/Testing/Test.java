@@ -1,3 +1,8 @@
+package Testing;
+
+import Core.Artifact;
+import Core.Artifact_ID;
+
 /**
  * Created by nwilson on 2/19/15.
  */
