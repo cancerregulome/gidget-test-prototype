@@ -31,4 +31,8 @@ public class Artifact_ID {
     public static Artifact_ID New(String name) {
         return New(name, null);
     }
+
+    public String toString() {
+        return name;
+    }
 }
