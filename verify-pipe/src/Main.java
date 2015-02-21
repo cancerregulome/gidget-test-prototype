@@ -1,5 +1,4 @@
-import core.Artifact;
-import core.Artifact_ID;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Created by Nick on 2/20/2015.
@@ -7,7 +6,7 @@ import core.Artifact_ID;
 public class Main {
 
     public static void main(String[] args) {
-        Artifact_ID aid = Artifact_ID.New("hi");
-        System.out.println(aid);
+        // TODO implement
+        throw new NotImplementedException();
     }
 }
