@@ -41,9 +41,9 @@ public class TestLoader {
 
                 Artifact_ID aid;
                 if (test.has(KEY_AID_NAME)) {
-                    aid = pipe.ArtifactIDFromName(test.getString(KEY_AID_NAME));
+                    aid = pipe.artifactManifest.ArtifactIDFromName(test.getString(KEY_AID_NAME));
                 } else if (test.has(KEY_AID_UUID)) {
-                    aid = pipe.ArtifactIDFromUUID(UUID.fromString(test.getString(KEY_AID_UUID)));
+                    aid = pipe.artifactManifest.ArtifactIDFromUUID(UUID.fromString(test.getString(KEY_AID_UUID)));
                 } else {
                     output.add(new ErrorTest("Must specify either artifact name or uuid.", name, null));
                     continue;
