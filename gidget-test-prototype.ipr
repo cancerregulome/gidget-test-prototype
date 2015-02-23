@@ -45,11 +45,20 @@
       <module fileurl="file://$PROJECT_DIR$/verify-pipe/verify-pipe.iml" filepath="$PROJECT_DIR$/verify-pipe/verify-pipe.iml" group="apps" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
   </component>
+  <component name="libraryTable">
+    <library name="org.json" type="repository">
+      <properties maven-id="org.json:json:20141113" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/json-20141113.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
 </project>
-
