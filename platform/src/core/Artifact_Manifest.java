@@ -19,16 +19,19 @@ public class Artifact_Manifest {
         this.mpuuid_artifactID = new HashMap<UUID, Artifact_ID>();
 
         for (Artifact_ID aid : ids) {
-
-            if (mpname_artifactID.containsKey(aid.name)) {
-                mpname_artifactID.put(aid.name, aidAmbiguous);
-            }
-            else {
-                mpname_artifactID.put(aid.name, aid);
-            }
-            // TODO check for duplicates and throw if there are any
-            mpuuid_artifactID.put(aid.uuid, aid);
+            AddArtifactID(aid);
         }
+    }
+
+    public void AddArtifactID(Artifact_ID aid) {
+        if (mpname_artifactID.containsKey(aid.name)) {
+            mpname_artifactID.put(aid.name, aidAmbiguous);
+        }
+        else {
+            mpname_artifactID.put(aid.name, aid);
+        }
+        // TODO check for duplicates and throw if there are any
+        mpuuid_artifactID.put(aid.uuid, aid);
     }
 
     public Artifact_ID ArtifactIDFromName(String name) {
