@@ -18,6 +18,8 @@ public class Artifact_ID {
 
     public Artifact_ID(UUID uuid, String name, String description) {
         this.uuid = uuid;
+        if (name == "")
+            name = null;
         this.name = name;
         this.description = description;
     }
