@@ -3,6 +3,7 @@ package core;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.csv.QuoteMode;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
@@ -18,7 +19,10 @@ import java.util.UUID;
  */
 public class Artifact_Manifest {
 
-    private static final CSVFormat MANIFEST_FORMAT = CSVFormat.newFormat('\t').withHeader("uuid", "name", "description");
+    private static final CSVFormat MANIFEST_FORMAT = CSVFormat.newFormat('\t')
+            .withHeader("uuid", "name", "description")
+            .withQuote('"')
+            .withQuoteMode(QuoteMode.MINIMAL);
 
     private static final Artifact_ID aidAmbiguous = new Artifact_ID(null, null, null);
 
