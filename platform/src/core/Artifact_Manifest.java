@@ -6,10 +6,7 @@ import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.csv.QuoteMode;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -63,11 +60,9 @@ public class Artifact_Manifest {
     }
 
     public static Artifact_Manifest FromFile(File file) {
-        try (Reader fileReader = new FileReader(file)) {
-            CSVParser csvParser = new CSVParser(fileReader, MANIFEST_FORMAT);
+        try (CSVParser in = new CSVParser(new FileReader(file), MANIFEST_FORMAT)) {
             Artifact_Manifest manifest = new Artifact_Manifest();
-
-            for (CSVRecord record : csvParser) {
+            for (CSVRecord record : in) {
                 String name = record.get("name");
                 UUID uuid = UUID.fromString(record.get("uuid"));
                 String description = record.get("description");
