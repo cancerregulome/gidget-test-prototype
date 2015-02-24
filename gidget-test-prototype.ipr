@@ -6,6 +6,8 @@
       <root id="archive" name="verify-pipe.jar">
         <element id="module-output" name="verify-pipe" />
         <element id="module-output" name="platform" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/json-20141113.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-csv-1.1.jar" path-in-jar="/" />
       </root>
     </artifact>
   </component>
