@@ -33,6 +33,6 @@ public class Artifact_ID {
     }
 
     public String toString() {
-        return name;
+        return String.format("Artifact_ID [name: %s uuid: %s desc: %s ]", name, uuid, description);
     }
 }

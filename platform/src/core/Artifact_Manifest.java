@@ -81,6 +81,16 @@ public class Artifact_Manifest {
         throw new NotImplementedException(); // TODO
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Artifact_ID aid : mpuuid_artifactID.values()) {
+            sb.append(aid.toString());
+            sb.append('\n');
+        }
+        return sb.toString();
+    }
+
     public Artifact_ID ArtifactIDFromUUID(UUID uuid) {
         return mpuuid_artifactID.get(uuid);
     }
