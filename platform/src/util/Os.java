@@ -14,7 +14,7 @@ public abstract class Os {
     public static final int INTERRUPTED_STATUS = Integer.MIN_VALUE + 2;
     public static final int IO_FAILURE_STATUS  = Integer.MIN_VALUE + 3;
 
-    public static Os current = GetCurrent();
+    public static final Os current = GetCurrent();
 
     // Inspect the runtime environment and set up os interface properly
     private static Os GetCurrent() {
