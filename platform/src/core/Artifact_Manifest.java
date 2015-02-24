@@ -81,8 +81,15 @@ public class Artifact_Manifest {
         }
     }
 
-    public static void WriteToFile(File file) {
-        throw new NotImplementedException(); // TODO
+    public void WriteToFile(File file) {
+        try (CSVPrinter out = new CSVPrinter(new FileWriter(file), MANIFEST_FORMAT)) {
+            for (Artifact_ID aid : mpuuid_artifactID.values()) {
+                out.printRecord(aid.uuid, aid.name, aid.description);
+            }
+
+        } catch (IOException ex) {
+            System.err.println("Could not write to file " + file.getAbsolutePath());
+        }
     }
 
     @Override
