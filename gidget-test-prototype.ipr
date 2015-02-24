@@ -52,12 +52,24 @@
     <mapping directory="" vcs="" />
   </component>
   <component name="libraryTable">
-    <library name="org.json" type="repository">
+    <library name="org.apache.commons:commons-csv:1.1" type="repository">
+      <properties maven-id="org.apache.commons:commons-csv:1.1" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/commons-csv-1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/lib/commons-csv-1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES />
+    </library>
+    <library name="org.json:json" type="repository">
       <properties maven-id="org.json:json:20141113" />
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/json-20141113.jar!/" />
       </CLASSES>
-      <JAVADOC />
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/lib/json-20141113-javadoc.jar!/" />
+      </JAVADOC>
       <SOURCES />
     </library>
   </component>
