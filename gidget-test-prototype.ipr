@@ -6,8 +6,8 @@
       <root id="archive" name="verify-pipe.jar">
         <element id="module-output" name="verify-pipe" />
         <element id="module-output" name="platform" />
-        <element id="extracted-dir" path="$PROJECT_DIR$/lib/json-20141113.jar" path-in-jar="/" />
         <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-csv-1.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/lib/json-20140107.jar" path-in-jar="/" />
       </root>
     </artifact>
   </component>
@@ -65,12 +65,12 @@
       <SOURCES />
     </library>
     <library name="org.json:json" type="repository">
-      <properties maven-id="org.json:json:20141113" />
+      <properties maven-id="org.json:json:20140107" />
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/json-20141113.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/json-20140107.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/lib/json-20141113-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/json-20140107-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES />
     </library>
