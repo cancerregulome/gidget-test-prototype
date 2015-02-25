@@ -17,8 +17,8 @@ import org.json.*;
  */
 public class TestLoader {
 
-    private static final String KEY_AID_NAME = "artifact_name";
-    private static final String KEY_AID_UUID = "artifact_uuid";
+    private static final String KEY_AID_NAME = "artifact-name";
+    private static final String KEY_AID_UUID = "artifact-uuid";
     private static final String KEY_TESTS    = "tests";
     private static final String KEY_NAME     = "name";
     private static final String KEY_CMD      = "cmd";
