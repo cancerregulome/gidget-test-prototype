@@ -3,6 +3,7 @@ package util;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by nwilson on 2/23/15.
@@ -24,14 +25,14 @@ public abstract class Os {
      * @param cmdAndArgs: The cmd and arguments as would be typed into a shell
      * @return
      */
-    public abstract int Exec(String cmdAndArgs);
+    public abstract int Exec(List<String> cmdAndArgs);
 
     private static class UnixOs extends Os
     {
         public UnixOs() { }
 
         @Override
-        public int Exec(String cmdAndArgs) {
+        public int Exec(List<String> cmdAndArgs) {
             try {
                 ProcessBuilder pb = new ProcessBuilder(cmdAndArgs);
                 pb.redirectError(ProcessBuilder.Redirect.INHERIT);
@@ -49,7 +50,7 @@ public abstract class Os {
     private static class WindowsOS extends Os {
 
         @Override
-        public int Exec(String cmdAndArgs) {
+        public int Exec(List<String> cmdAndArgs) {
             throw new NotImplementedException();
         }
     }

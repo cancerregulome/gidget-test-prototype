@@ -71,7 +71,7 @@ public class TestRunner {
             boolean passed = true;
             try {
                 test.Verify(actuals.ArtifactFromID(test.aid), baselines.ArtifactFromID(test.aid));
-            } catch (Exception ex) {
+            } catch (Exception|AssertionError ex) {
                 passed = false;
                 for (StackTraceElement frame : ex.getStackTrace())
                     PrintlnToOutput(frame.toString());
