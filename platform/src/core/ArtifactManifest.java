@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * Created by nwilson on 2/23/15.
  */
-public class Artifact_Manifest {
+public class ArtifactManifest {
 
     private static final CSVFormat MANIFEST_FORMAT = CSVFormat.DEFAULT
             .withDelimiter('\t')
@@ -19,25 +19,25 @@ public class Artifact_Manifest {
             .withSkipHeaderRecord()
             .withRecordSeparator('\n');
 
-    private static final Artifact_ID aidAmbiguous = new Artifact_ID(null, null, null);
+    private static final ArtifactID aidAmbiguous = new ArtifactID(null, null, null);
 
     // aid inversions
-    private final Map<String, Artifact_ID> mpname_artifactID;
-    private final Map<UUID, Artifact_ID> mpuuid_artifactID;
+    private final Map<String, ArtifactID> mpname_artifactID;
+    private final Map<UUID, ArtifactID> mpuuid_artifactID;
 
-    private Artifact_Manifest() {
-        this.mpname_artifactID = new HashMap<String, Artifact_ID>();
-        this.mpuuid_artifactID = new HashMap<UUID, Artifact_ID>();
+    private ArtifactManifest() {
+        this.mpname_artifactID = new HashMap<String, ArtifactID>();
+        this.mpuuid_artifactID = new HashMap<UUID, ArtifactID>();
     }
 
-    private Artifact_Manifest(Iterable<Artifact_ID> ids) {
+    private ArtifactManifest(Iterable<ArtifactID> ids) {
         this();
-        for (Artifact_ID aid : ids) {
+        for (ArtifactID aid : ids) {
             AddArtifactID(aid);
         }
     }
 
-    public void AddArtifactID(Artifact_ID aid) {
+    public void AddArtifactID(ArtifactID aid) {
         if (mpname_artifactID.containsKey(aid.name)) {
             mpname_artifactID.put(aid.name, aidAmbiguous);
         }
@@ -48,8 +48,8 @@ public class Artifact_Manifest {
         mpuuid_artifactID.put(aid.uuid, aid);
     }
 
-    public Artifact_ID ArtifactIDFromName(String name) {
-        Artifact_ID aid = mpname_artifactID.get(name);
+    public ArtifactID ArtifactIDFromName(String name) {
+        ArtifactID aid = mpname_artifactID.get(name);
         if (aid == aidAmbiguous) {
             System.err.println("Artifact name " + name + " is ambiguous. Please refer to artifact by UUID instead");
             return null;
@@ -57,14 +57,14 @@ public class Artifact_Manifest {
         return aid;
     }
 
-    public static Artifact_Manifest FromFile(File file) {
+    public static ArtifactManifest FromFile(File file) {
         try (CSVParser in = new CSVParser(new FileReader(file), MANIFEST_FORMAT)) {
-            Artifact_Manifest manifest = new Artifact_Manifest();
+            ArtifactManifest manifest = new ArtifactManifest();
             for (CSVRecord record : in) {
                 String name = record.get("name");
                 UUID uuid = UUID.fromString(record.get("uuid"));
                 String description = record.get("description");
-                manifest.AddArtifactID(new Artifact_ID(uuid, name, description));
+                manifest.AddArtifactID(new ArtifactID(uuid, name, description));
             }
             return manifest;
 
@@ -76,7 +76,7 @@ public class Artifact_Manifest {
 
     public void WriteToFile(File file) {
         try (CSVPrinter out = new CSVPrinter(new FileWriter(file), MANIFEST_FORMAT)) {
-            for (Artifact_ID aid : mpuuid_artifactID.values()) {
+            for (ArtifactID aid : mpuuid_artifactID.values()) {
                 out.printRecord(aid.uuid, aid.name, aid.description);
             }
 
@@ -88,14 +88,14 @@ public class Artifact_Manifest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (Artifact_ID aid : mpuuid_artifactID.values()) {
+        for (ArtifactID aid : mpuuid_artifactID.values()) {
             sb.append(aid.toString());
             sb.append('\n');
         }
         return sb.toString();
     }
 
-    public Artifact_ID ArtifactIDFromUUID(UUID uuid) {
+    public ArtifactID ArtifactIDFromUUID(UUID uuid) {
         return mpuuid_artifactID.get(uuid);
     }
 }

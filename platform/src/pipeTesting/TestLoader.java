@@ -1,7 +1,7 @@
 package pipeTesting;
 
-import core.Artifact_ID;
-import core.Artifact_Manifest;
+import core.ArtifactID;
+import core.ArtifactManifest;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,7 +23,7 @@ public class TestLoader {
     private static final String KEY_NAME     = "name";
     private static final String KEY_CMD      = "cmd";
 
-    public static List<Test> TestsFromFile(File file, Artifact_Manifest manifest) {
+    public static List<Test> TestsFromFile(File file, ArtifactManifest manifest) {
         List<Test> output = new LinkedList<>();
 
         try (FileInputStream fileIn = new FileInputStream(file)) {
@@ -39,7 +39,7 @@ public class TestLoader {
                     name = null;
                 }
 
-                Artifact_ID aid;
+                ArtifactID aid;
                 if (test.has(KEY_AID_NAME)) {
                     aid = manifest.ArtifactIDFromName(test.getString(KEY_AID_NAME));
                 } else if (test.has(KEY_AID_UUID)) {

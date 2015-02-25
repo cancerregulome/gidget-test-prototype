@@ -1,7 +1,7 @@
 package pipeTesting;
 
 import core.Artifact;
-import core.Artifact_ID;
+import core.ArtifactID;
 import util.Os;
 
 /**
@@ -14,7 +14,7 @@ public class CmdTest extends Test {
 
     private final String cmd;
 
-    public CmdTest(String cmd, Artifact_ID aid, String name) {
+    public CmdTest(String cmd, ArtifactID aid, String name) {
         super(aid, name);
         this.cmd = cmd;
     }

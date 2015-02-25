@@ -1,6 +1,6 @@
 package pipeTesting;
 
-import core.Artifact_Manifest;
+import core.ArtifactManifest;
 import core.Pipe;
 
 import java.io.*;
@@ -14,10 +14,10 @@ public class TestRunner {
     private final List<Test> tests;
     private final Pipe actuals;
     private final Pipe baselines;
-    private final Artifact_Manifest manifest;
+    private final ArtifactManifest manifest;
     private final Appendable output;
 
-    private TestRunner(List<Test> tests, Pipe actuals, Pipe baselines, Artifact_Manifest manifest, Appendable output) {
+    private TestRunner(List<Test> tests, Pipe actuals, Pipe baselines, ArtifactManifest manifest, Appendable output) {
         this.tests = tests;
         this.actuals = actuals;
         this.baselines = baselines;
@@ -26,7 +26,7 @@ public class TestRunner {
     }
 
     public static TestRunner FromTestFile(File testFile, File manifestFile, File actualsDirectory, File baselinesDirectory, Appendable output) {
-        Artifact_Manifest manifest = Artifact_Manifest.FromFile(manifestFile);
+        ArtifactManifest manifest = ArtifactManifest.FromFile(manifestFile);
 
         return new TestRunner(
                 TestLoader.TestsFromFile(testFile, manifest),

@@ -5,7 +5,7 @@ package pipeTesting;
  */
 
 import core.Artifact;
-import core.Artifact_ID;
+import core.ArtifactID;
 
 /**
  * Represents a test that is an error or was loaded incorrectly
@@ -14,7 +14,7 @@ public class ErrorTest extends Test {
 
     private final String msg;
 
-    public ErrorTest(String msg, String name, Artifact_ID aid) {
+    public ErrorTest(String msg, String name, ArtifactID aid) {
         super(aid, name);
         this.msg = msg;
     }

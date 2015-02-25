@@ -11,10 +11,10 @@ import java.io.File;
  */
 public class Artifact {
 
-    public final Artifact_ID aid;
+    public final ArtifactID aid;
     public final File file;
 
-    public Artifact(Artifact_ID aid, File file) {
+    public Artifact(ArtifactID aid, File file) {
         this.aid = aid;
         this.file = file;
     }

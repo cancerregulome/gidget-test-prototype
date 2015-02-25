@@ -1,7 +1,7 @@
 package pipeTesting;
 
 import core.Artifact;
-import core.Artifact_ID;
+import core.ArtifactID;
 
 /**
  * Created by nwilson on 2/19/15.
@@ -9,10 +9,10 @@ import core.Artifact_ID;
 
 public abstract class Test {
 
-    public final Artifact_ID aid;
+    public final ArtifactID aid;
     public final String name;
 
-    protected Test(Artifact_ID aid, String name) {
+    protected Test(ArtifactID aid, String name) {
         this.aid = aid;
         this.name = name;
     }

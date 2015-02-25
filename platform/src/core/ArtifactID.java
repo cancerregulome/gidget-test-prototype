@@ -11,12 +11,12 @@ import java.util.UUID;
  *
  * TODO: Make this hierarchical and/or parameterized?
  */
-public class Artifact_ID {
+public class ArtifactID {
     public final UUID uuid;
     public final String name;
     public final String description;
 
-    public Artifact_ID(UUID uuid, String name, String description) {
+    public ArtifactID(UUID uuid, String name, String description) {
         this.uuid = uuid;
         if (name == "")
             name = null;
@@ -24,13 +24,13 @@ public class Artifact_ID {
         this.description = description;
     }
 
-    private Artifact_ID(UUID uuid, String name) { this(uuid, name, null); }
+    private ArtifactID(UUID uuid, String name) { this(uuid, name, null); }
 
-    public static Artifact_ID New(String name, String description) {
-        return new Artifact_ID(UUID.randomUUID(), name, description);
+    public static ArtifactID New(String name, String description) {
+        return new ArtifactID(UUID.randomUUID(), name, description);
     }
 
-    public static Artifact_ID New(String name) {
+    public static ArtifactID New(String name) {
         return New(name, null);
     }
 
