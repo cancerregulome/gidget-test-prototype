@@ -39,6 +39,10 @@ public class Pipe {
         this.artifactManifest = artifactManifest;
     }
 
+    public Artifact ArtifactFromID(Artifact_ID artifactID) {
+        return mpaid_artifact.get(artifactID);
+    }
+
     /**
      * Creates a pipe by recursively scanning the artifact metadata stored in extended file attributes in the direcrory
      * rooted at the directory argument.

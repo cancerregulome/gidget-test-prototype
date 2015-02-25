@@ -1,6 +1,7 @@
 package pipeTesting;
 
 import core.Artifact_ID;
+import core.Artifact_Manifest;
 import core.Pipe;
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +24,7 @@ public class TestLoader {
     private static final String KEY_NAME     = "name";
     private static final String KEY_CMD      = "cmd";
 
-    public static Iterable<Test> TestsFromFile(File file, Pipe pipe) {
+    public static List<Test> TestsFromFile(File file, Artifact_Manifest manifest) {
         List<Test> output = new LinkedList<>();
 
         try (FileInputStream fileIn = new FileInputStream(file)) {
@@ -41,9 +42,9 @@ public class TestLoader {
 
                 Artifact_ID aid;
                 if (test.has(KEY_AID_NAME)) {
-                    aid = pipe.artifactManifest.ArtifactIDFromName(test.getString(KEY_AID_NAME));
+                    aid = manifest.ArtifactIDFromName(test.getString(KEY_AID_NAME));
                 } else if (test.has(KEY_AID_UUID)) {
-                    aid = pipe.artifactManifest.ArtifactIDFromUUID(UUID.fromString(test.getString(KEY_AID_UUID)));
+                    aid = manifest.ArtifactIDFromUUID(UUID.fromString(test.getString(KEY_AID_UUID)));
                 } else {
                     output.add(new ErrorTest("Must specify either artifact name or uuid.", name, null));
                     continue;
