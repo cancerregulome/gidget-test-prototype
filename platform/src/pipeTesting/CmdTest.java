@@ -23,7 +23,7 @@ public class CmdTest extends Test {
     void Verify(Artifact base, Artifact actual) {
         String cmdParsed = this.cmd;
         cmdParsed = cmdParsed.replaceAll(BASELINE_ARG, base.file.getAbsolutePath());
-        cmdParsed = cmdParsed.replaceAll(ACTUAL_ARG, base.file.getAbsolutePath());
+        cmdParsed = cmdParsed.replaceAll(ACTUAL_ARG, actual.file.getAbsolutePath());
         assert Os.current.Exec(cmdParsed) == 0;
     }
 }
