@@ -3,8 +3,6 @@ package pipeTesting;
 import core.Artifact;
 import core.Artifact_ID;
 
-import java.io.IOException;
-
 /**
  * Created by nwilson on 2/19/15.
  */

@@ -2,7 +2,6 @@ package pipeTesting;
 
 import core.Artifact_ID;
 import core.Artifact_Manifest;
-import core.Pipe;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
