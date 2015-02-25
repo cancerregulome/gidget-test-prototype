@@ -78,7 +78,7 @@ public class Pipe {
             for (File subfile : file.listFiles()) {
                 FromDirectory_helper(accumulate, subfile, manifest);
             }
-        } else if (file.getName() == ".artifacts") {
+        } else if (file.getName().equals(".artifacts")) {
             LoadArtifactsFile(file, accumulate, manifest);
         }
         // else do nothing
